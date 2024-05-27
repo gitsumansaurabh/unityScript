@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "nodemon": "npx nodemon index.js"
+    "dev": "npx nodemon index.js",
+    "buid": "npm install && npm install --prefix ../us-frontend && npm run build --prefix ../us-frontend"
   },
   "author": "",
   "license": "ISC",
