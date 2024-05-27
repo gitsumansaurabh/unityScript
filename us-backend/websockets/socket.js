@@ -25,10 +25,9 @@ const socketIoHandler = (server) => {
       // get information regarding room members
 
       // updating the members in frontend
-      const response = await axios.post(
-        "http://localhost:3001/api/room/check-room-availaibility",
-        { roomCode }
-      );
+      const response = await axios.post("/api/room/check-room-availaibility", {
+        roomCode,
+      });
       if (response.data.existance) {
         members = response.data.roomDetails?.members;
         members.forEach(({ userSocketId }) => {
@@ -45,7 +44,7 @@ const socketIoHandler = (server) => {
         // if disconnected member record is present in database then emit disconnected event and remove user from data base also
         if (member.userSocketId === socket.id) {
           axios
-            .post("http://localhost:3001/api/room/remove-user-from-room", {
+            .post("/api/room/remove-user-from-room", {
               roomcode,
               userSocketId: member.userSocketId,
             })
@@ -66,7 +65,7 @@ const socketIoHandler = (server) => {
 
     socket.on("send-msg", ({ sender, msg, roomCode }) => {
       axios
-        .post("http://localhost:3001/api/room/save-room-chats", {
+        .post("/api/room/save-room-chats", {
           roomCode,
           userChat: { sender, msg },
         })
@@ -93,7 +92,7 @@ const socketIoHandler = (server) => {
       ({ memberEmail, roomCode, userSocketId }) => {
         console.log(memberEmail + roomCode + userSocketId);
         axios
-          .post("http://localhost:3001/api/room/add-user-to-blacklist", {
+          .post("/api/room/add-user-to-blacklist", {
             memberEmail,
             roomCode,
           })

@@ -24,28 +24,28 @@ const Sharemodal = ({ roomCode, mainText, subText, setSharePopup }) => {
 
       <div className="ctrls text-center mt-12 flex justify-center gap-5">
         <WhatsappShareButton
-          url="http://localhost:3001"
+          url=""
           title={`\nJoin the room 🤞 with roomcode → ${roomCode}`}
         >
           <WhatsappIcon size={60} round={true} />
         </WhatsappShareButton>
 
         <EmailShareButton
-          url="http://localhost:3001"
+          url=""
           title={`\nJoin the room 🤞 with roomcode → ${roomCode}`}
         >
           <EmailIcon size={60} round={true} />
         </EmailShareButton>
 
         <TelegramShareButton
-          url="http://localhost:3001"
+          url=""
           title={`\nJoin the room 🤞 with roomcode → ${roomCode}`}
         >
           <TelegramIcon size={60} round={true} />
         </TelegramShareButton>
 
         <RedditShareButton
-          url="http://localhost:3001"
+          url=""
           title={`\nJoin the room 🤞 with roomcode → ${roomCode}`}
         >
           <RedditIcon size={60} round={true} />
